@@ -52,6 +52,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
