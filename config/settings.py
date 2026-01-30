@@ -28,11 +28,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-5p&&5eugq5=5$$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    ".onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = ["*"]
 
 
 
@@ -98,7 +94,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": os.getenv(
+            "SQLITE_PATH",
+            "/data/db.sqlite3"  # volume path
+        ),
     }
 }
 
