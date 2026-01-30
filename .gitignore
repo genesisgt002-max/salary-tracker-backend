@@ -1,6 +1,23 @@
-venv/
+# Python
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*.pyo
+*.pyd
+
+# Django
 db.sqlite3
+*.log
+media/
 staticfiles/
+
+# Virtualenv
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if frontend exists)
+node_modules/
+dist/
